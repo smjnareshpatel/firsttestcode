@@ -1,0 +1,36 @@
+version : "3.1"
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - 8001:8001
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8001
+
+# services:
+#   web:
+#     build:
+#       context: ./proj
+#       dockerfile: Dockerfile
+#     command: gunicorn proj.wsgi:application --bind 0.0.0.0:8000
+#     volumes:
+#       - static_volume:/home/app/web/staticfiles
+#     expose:
+#       - 8000
+
+#   nginx:
+#     build: ./nginx
+#     volumes:
+#       - static_volume:/home/app/web/staticfiles
+#     ports:
+#       - 1337:80
+    
+#     depends_on:
+#       - web
+
+# volumes:
+#   static_volume:
