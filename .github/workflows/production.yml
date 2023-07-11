@@ -20,6 +20,8 @@ jobs:
           git fetch origin
           git checkout main
           git merge --allow-unrelated-histories cicd
+          git add .
+          git commit -m "check error"
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
           git push origin main
 
