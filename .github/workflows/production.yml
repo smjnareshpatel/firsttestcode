@@ -18,7 +18,7 @@ jobs:
           git config user.name "naresh"
           git config user.email "smjnareshpatel@gmail.com"
           echo "line 20"
-          git fatch origin
+          git fetch origin
           git checkout main
           echo "line 22"
           git merge --allow-unrelated-histories cicd
