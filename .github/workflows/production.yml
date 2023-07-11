@@ -21,7 +21,7 @@ jobs:
           git fetch origin
           git checkout main
           echo "line 22"
-          git merge --allow-unrelated-histories cicd
+          git merge --allow-unrelated-histories main
           echo "line 24"
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
           echo "line 26"
