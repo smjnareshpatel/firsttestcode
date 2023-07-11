@@ -23,6 +23,8 @@ jobs:
           echo "line 22"
           git config pull.rebase false  # merge
           git config pull.rebase true   # rebase
+          git rebase --continue
+          git rebase --skip
           git pull origin cicd --allow-unrelated-histories
           echo "line 24"
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
