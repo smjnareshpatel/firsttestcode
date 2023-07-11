@@ -19,7 +19,7 @@ jobs:
           git config user.email "smjnareshpatel@gmail.com"
           git fetch origin
           git checkout main
-          #git merge --allow-unrelated-histories cicd
+          git merge --allow-unrelated-histories cicd
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
           git push origin main
 
