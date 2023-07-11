@@ -17,12 +17,15 @@ jobs:
         run: |
           git config user.name "naresh"
           git config user.email "smjnareshpatel@gmail.com"
-          git branch
-          git fetch origin
+          echo "line 20"
           git checkout main
+          echo "line 22"
           git merge --allow-unrelated-histories cicd
+          echo "line 24"
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
+          echo "line 26"
           git push origin main
+          echo "line 28"
           git add .
           git commit -m "check error"
 
