@@ -21,10 +21,10 @@ jobs:
           git fetch origin
           git checkout main
           echo "line 22"
-          git config pull.rebase false  # merge
           git config pull.rebase true   # rebase
+          echo "line 222"
           git rebase --continue
-          git rebase --skip
+          echo "line 2222"
           git pull origin cicd --allow-unrelated-histories
           echo "line 24"
           git merge --no-ff ${{ github.sha }} -m "Merge branch 'cicd' into 'main'"
